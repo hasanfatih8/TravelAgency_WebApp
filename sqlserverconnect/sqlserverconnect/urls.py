@@ -18,5 +18,5 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.connsql)
+    path('',views.insertCustomer) # it changes here
 ]
