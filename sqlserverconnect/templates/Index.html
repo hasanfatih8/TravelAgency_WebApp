@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Connect SQLServer From Django</title>
+</head>
+<body>
+    <center>
+        <h1>Selamun aleyküm</h1>
+        <hr>
+        <table border ="1">
+            <tr>
+                <th>Baho lalesi</th>
+                <th>Zeynep eziği</th>
+                <th>Mert Virüsü</th>
+            </tr>
+            {% for datadisplay in sqlserverconn%}
+            <tr>
+               <td>{{datadisplay.CarId}}</td>
+               <td>{{datadisplay.CarType}}</td>
+               <td>{{datadisplay.CarModel}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
