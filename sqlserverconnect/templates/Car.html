@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rented Cars</title>
+</head>
+<body>
+    <center>
+        <h1>Selamun aleyküm</h1>
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <table border ="1">
+                <tr>
+                    <th>Baho lalesi</th>
+                    <th>Zeynep eziği</th>
+                    <th>Mert Virüsü</th>
+                </tr>
+                {% for datadisplay in sqlserverconn%}
+                <tr>
+                <td>{{datadisplay.CarId}}</td>
+                <td>{{datadisplay.CarType}}</td>
+                <td>{{datadisplay.CarModel}}</td>
+                </tr>
+                {% endfor %}
+
+              
+    </center>
+</body>
+</html>

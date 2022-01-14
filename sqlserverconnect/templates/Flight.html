@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tickets</title>
+</head>
+<body>
+    <center>
+        <h1>Selamun aleyküm</h1>
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <table border ="1">
+                <tr>
+                    <th>Baho lalesi</th>
+                    <th>Zeynep eziği</th>
+                    <th>Mert Virüsü</th>
+                    <th>Oldu</th>
+                    <th>Ulan</th>
+                    <th>Sonunda</th>
+                </tr>
+                {% for datadisplay in seeFlights%}
+                <tr>
+                <td>{{datadisplay.FlightID}}</td>
+                <td>{{datadisplay.AirlineCompany}}</td>
+                <td>{{datadisplay.FlightDate}}</td>
+                <td>{{datadisplay.FromAirport}}</td>
+                <td>{{datadisplay.toAirport}}</td>
+                <td>{{datadisplay.FlightTime}}</td>
+                </tr>
+                {% endfor %}
+
+              
+    </center>
+</body>
+</html>

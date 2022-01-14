@@ -18,5 +18,8 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.insertCustomer) # it changes here
+    path('',views.insertCustomer), # it changes here
+    path('Flight/',views.Flight), # it changes here
+    path('Hotel/',views.Hotel), # it changes here
+    path('Car/',views.connsql) # it changes here
 ]

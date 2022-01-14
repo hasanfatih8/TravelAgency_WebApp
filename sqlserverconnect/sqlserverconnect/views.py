@@ -1,17 +1,39 @@
 from django.shortcuts import render
 from sqlserverconnect.models import sqlserverconn
+from sqlserverconnect.models import seeFlights
+from sqlserverconnect.models import seeHotels
 from sqlserverconnect.models import insertData
 import pyodbc
 
-# def connsql(request):
-#     conn=pyodbc.connect('Driver={sql server};'
-#                         'Server=HASANFATIH8;'
-#                         'Database=TravelAgency;'
-#                         'Trusted_Connection=yes;')
-#     cursor=conn.cursor()
-#     cursor.execute("select * from Car")
-#     result=cursor.fetchall()
-#     return render(request, 'Index.html', {'sqlserverconn':result})
+def Flight(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    cursor.execute("select * from Flight")
+    result=cursor.fetchall()
+    return render(request, 'Flight.html', {'seeFlights':result})
+
+def Hotel(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    cursor.execute("select * from Hotel")
+    result=cursor.fetchall()
+    return render(request, 'Hotel.html', {'seeHotels':result})
+
+def connsql(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    cursor.execute("select * from Car")
+    result=cursor.fetchall()
+    return render(request, 'Car.html', {'sqlserverconn':result})
 
 def insertCustomer(request):
     conn=pyodbc.connect('Driver={sql server};'

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tickets</title>
+</head>
+<body>
+    <center>
+        <h1>Selamun aleyküm</h1>
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <table border ="1">
+                <tr>
+                    <th>Baho lalesi</th>
+                    <th>Zeynep eziği</th>
+                    <th>Mert Virüsü</th>
+                </tr>
+                {% for datadisplay in seeHotels%}
+                <tr>
+                <td>{{datadisplay.HotelID}}</td>
+                <td>{{datadisplay.HotelName}}</td>
+                <td>{{datadisplay.BuildingNo}}</td>
+                <td>{{datadisplay.Street}}</td>
+                <td>{{datadisplay.City}}</td>
+                <td>{{datadisplay.Country}}</td>
+                </tr>
+                {% endfor %}
+
+              
+    </center>
+</body>
+</html>
