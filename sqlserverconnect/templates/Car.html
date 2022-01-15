@@ -8,15 +8,15 @@
 </head>
 <body>
     <center>
-        <h1>Selamun aleyküm</h1>
+        <h1>Rented Cars</h1>
         <hr>
         <form method="POST">
             {% csrf_token %}
             <table border ="1">
                 <tr>
-                    <th>Baho lalesi</th>
-                    <th>Zeynep eziği</th>
-                    <th>Mert Virüsü</th>
+                    <th>Car ID</th>
+                    <th>Car Type</th>
+                    <th>Car Model</th>
                 </tr>
                 {% for datadisplay in sqlserverconn%}
                 <tr>

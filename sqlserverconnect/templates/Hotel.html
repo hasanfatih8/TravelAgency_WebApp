@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Tickets</title>
+    <title>Hotel Reservations</title>
 </head>
 <body>
     <center>
-        <h1>Selamun aleyküm</h1>
+        <h1>Hotel Reservations</h1>
         <hr>
         <form method="POST">
             {% csrf_token %}
             <table border ="1">
                 <tr>
-                    <th>Baho lalesi</th>
-                    <th>Zeynep eziği</th>
-                    <th>Mert Virüsü</th>
+                    <th>Hotel ID</th>
+                    <th>Hotel Name</th>
+                    <th>Building No</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>Country</th>
                 </tr>
                 {% for datadisplay in seeHotels%}
                 <tr>

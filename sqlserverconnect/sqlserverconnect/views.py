@@ -63,3 +63,42 @@ def insertCustomer(request):
             return render(request, 'Index.html')
     else:
         return render(request, 'Index.html')
+
+def TripPriceDifference(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    try:
+        cursor.execute('exec sp_TripPriceDifference %s, %s'(value1, value2))
+        result_set = cursor.fetchall()
+        return render(request, 'TripPriceDifference.html', {'seeTripPriceDifference':result})
+    finally:
+        cursor.close()
+
+def GroupPayment(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    try:
+        cursor.execute('exec sp_GroupPayment %d'(value1))
+        result_set = cursor.fetchall()
+        return render(request, 'GroupPayment.html', {'seeGroupPayment':result})
+    finally:
+        cursor.close()
+
+def BookingCount(request):
+    conn=pyodbc.connect('Driver={sql server};'
+                        'Server=HASANFATIH8;'
+                        'Database=TravelAgency;'
+                        'Trusted_Connection=yes;')
+    cursor=conn.cursor()
+    try:
+        cursor.execute('exec sp_BookingCount %d'(value1))
+        result_set = cursor.fetchall()
+        return render(request, 'BookingCount.html', {'seeBookingCount':result})
+    finally:
+        cursor.close()

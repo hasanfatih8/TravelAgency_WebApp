@@ -8,18 +8,18 @@
 </head>
 <body>
     <center>
-        <h1>Selamun aleyküm</h1>
+        <h1>Flight Tickets</h1>
         <hr>
         <form method="POST">
             {% csrf_token %}
             <table border ="1">
                 <tr>
-                    <th>Baho lalesi</th>
-                    <th>Zeynep eziği</th>
-                    <th>Mert Virüsü</th>
-                    <th>Oldu</th>
-                    <th>Ulan</th>
-                    <th>Sonunda</th>
+                    <th>Flight ID</th>
+                    <th>Airline Company</th>
+                    <th>Flight Date</th>
+                    <th>From Airport</th>
+                    <th>to Airport</th>
+                    <th>Flight Time</th>
                 </tr>
                 {% for datadisplay in seeFlights%}
                 <tr>
